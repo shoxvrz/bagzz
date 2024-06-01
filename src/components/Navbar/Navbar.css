@@ -1,0 +1,32 @@
+@media only screen and (max-width: 480px) {
+  .navbar {
+    border: 1px solid;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 10px;
+    position: sticky;
+    top: 0;
+    z-index: 3;
+    background-color: #fff;
+  }
+  .navbar__left {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+  }
+  .navbar__right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .profileIcon {
+    width: 40px;
+    border: 1px solid;
+    border-radius: 50%;
+  }
+  .filterIcon {
+    cursor: pointer;
+  }
+}/*# sourceMappingURL=Navbar.css.map */

@@ -1,0 +1,36 @@
+.card {
+  height: 300px;
+  width: 180px;
+  border: 1px solid;
+  padding: 10px 5px;
+  background: rgb(241, 241, 241);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+  &__top {
+    .favoriteIcon {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+    }
+  }
+  &__center {
+    & img {
+      width: 100%;
+    }
+  }
+  &__bottom {
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    & .title {
+      font-size: 18px;
+      text-align: center;
+      font-weight: 500;
+    }
+  }
+}
