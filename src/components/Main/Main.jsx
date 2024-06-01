@@ -8,8 +8,8 @@ const Main = () => {
   const [productData, loadMoreHandler, visible, loading] = UseGetData();
 
   return (
-    <div className="main">
-      {productData.slice(0, visible).map((pro, i) => (
+    <div className="main__products">
+      {productData.slice(0, visible).map((pro) => (
         <Card key={pro.id} {...pro} />
       ))}
       <button onClick={loadMoreHandler}>Load more</button>

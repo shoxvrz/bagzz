@@ -1,14 +1,32 @@
 import React from 'react'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import FavoriteIcon from '@mui/icons-material/FavoriteBorder';
 import './Card.scss'
 import { useNavigate } from "react-router-dom";
+import UseFavItems from '../../hooks/UseFavItems';
 
 const Card = ({title, price, thumbnail, id}) => {
+  const {addFavItem, removeFavItems, isFavourite} = UseFavItems();
   const navigate = useNavigate();
+  const item = { title, price, thumbnail, id };
+
+  const toggleFavourite = (e) => {
+    e.stopPropagation();
+    if (isFavourite(item)) {
+      removeFavItems(item);
+    } else {
+      addFavItem(item);
+    }
+  };
+  
   return (
     <div  onClick={() => navigate('/pro/' + id)} className='card'>
         <div className="card__top">
-                <FavoriteBorderIcon className='favoriteIcon'/>
+        {isFavourite(item) ? (
+          <FavoriteIcon className="favoriteIcon" onClick={toggleFavourite} />
+        ) : (
+          <FavoriteBorderIcon className="favoriteIcon" onClick={toggleFavourite} />
+        )}
         </div>
         <div className="card__center">
             <img src={thumbnail} alt="" />
