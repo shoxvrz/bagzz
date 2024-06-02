@@ -1,7 +1,7 @@
 .card {
   height: 300px;
   width: 180px;
-  border: 1px solid;
+  border: 1px solid #ddd;
   padding: 10px 5px;
   background: rgb(241, 241, 241);
   position: relative;
@@ -9,28 +9,53 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+  border-radius: 10px;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
 
   &__top {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+
     .favoriteIcon {
       position: absolute;
       right: 10px;
       top: 10px;
+      cursor: pointer;
     }
   }
+
   &__center {
-    & img {
+    img {
       width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 8px;
     }
   }
+
   &__bottom {
     align-items: center;
     justify-content: space-between;
     display: flex;
     flex-direction: column;
-    & .title {
+    text-align: center;
+
+    .title {
       font-size: 18px;
-      text-align: center;
       font-weight: 500;
+      margin: 10px 0;
+    }
+
+    .price {
+      font-size: 16px;
+      color: #333;
     }
   }
 }

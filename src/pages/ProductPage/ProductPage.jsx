@@ -2,13 +2,15 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import UseGetData from "../../hooks/UseGetData";
 import Loading from "../../components/Loading/Loading";
+import useCart from "../../hooks/UseCart";
 import "./ProductPage.scss";
 
 const ProductPage = () => {
-  const [productData, , ,] = UseGetData();
+  const [productData] = UseGetData();
   const { proId } = useParams();
   const [product, setProduct] = useState(null);
   const [activeSection, setActiveSection] = useState("description");
+  const { addToCartHandler } = useCart();
 
   useEffect(() => {
     if (productData.length > 0) {
@@ -21,13 +23,11 @@ const ProductPage = () => {
     return <Loading />;
   }
 
-  console.log(productData);
-
   return (
     <div className="productPage">
       <div className="productPage__top">
         <div className="productPage__top--image">
-          <img src={product.images[0]} alt="" />
+          <img src={product.images[0]} alt={product.title} />
         </div>
         <div className="productPage__top--right">
           <div className="productPage__top--right-info">
@@ -37,7 +37,9 @@ const ProductPage = () => {
           </div>
           <div className="productPage__top--right-buttons">
             <button>Buy Now</button>
-            <button>Add To Cart</button>
+            <button onClick={() => addToCartHandler(product)}>
+              Add To Cart
+            </button>
           </div>
         </div>
       </div>
@@ -85,16 +87,21 @@ const ProductPage = () => {
           )}
           {activeSection === "payment" && (
             <div className="payment">
-
-            <p>
-            We accepts the following forms of payment for online purchases:
-            </p>
-            <p>
-            PayPal may not be used to purchase Made to Order Décor or DIY items.
-            </p>
-            <p>
-            The full transaction value will be charged to your credit card after we have verified your card details, received credit authorisation, confirmed availability and prepared your order for shipping. For Made To Order, DIY, personalised and selected Décor products, payment will be taken at the time the order is placed.
-            </p>
+              <p>
+                We accept the following forms of payment for online purchases:
+              </p>
+              <p>
+                PayPal may not be used to purchase Made to Order Décor or DIY
+                items.
+              </p>
+              <p>
+                The full transaction value will be charged to your credit card
+                after we have verified your card details, received credit
+                authorization, confirmed availability, and prepared your order
+                for shipping. For Made To Order, DIY, personalized, and selected
+                Décor products, payment will be taken at the time the order is
+                placed.
+              </p>
             </div>
           )}
         </div>

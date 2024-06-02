@@ -10,7 +10,7 @@ const Main = () => {
   return (
     <div className="main__products">
       {productData.slice(0, visible).map((pro) => (
-        <Card key={pro.id} {...pro} />
+        <Card pro={pro} key={pro.id} {...pro} />
       ))}
       <button onClick={loadMoreHandler}>Load more</button>
       {loading && <Loading className="loading" />}

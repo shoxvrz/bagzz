@@ -1,6 +1,5 @@
 @media only screen and (max-width: 480px) {
   .navbar {
-    border-bottom: 1px solid black;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -9,6 +8,9 @@
     top: 0;
     z-index: 3;
     background-color: #fff;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    box-shadow: 0px 14px 56px 0px rgba(0, 0, 0, 0.14);
   }
   .navbar__left {
     display: flex;

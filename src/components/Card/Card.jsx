@@ -5,10 +5,10 @@ import './Card.scss'
 import { useNavigate } from "react-router-dom";
 import UseFavItems from '../../hooks/UseFavItems';
 
-const Card = ({title, price, thumbnail, id}) => {
+const Card = ({title, price, images, id}) => {
   const {addFavItem, removeFavItems, isFavourite} = UseFavItems();
   const navigate = useNavigate();
-  const item = { title, price, thumbnail, id };
+  const item = { title, price, images, id };
 
   const toggleFavourite = (e) => {
     e.stopPropagation();
@@ -29,7 +29,7 @@ const Card = ({title, price, thumbnail, id}) => {
         )}
         </div>
         <div className="card__center">
-            <img src={thumbnail} alt="" />
+            <img src={images[0]} alt="" />
         </div>
         <div className="card__bottom">
         <h1 className="title">{title}</h1>

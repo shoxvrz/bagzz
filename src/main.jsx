@@ -6,7 +6,8 @@ import Loading from "./components/Loading/Loading";
 
 const App = lazy(() => import("./App"));
 const ProductPage = lazy(() => import("./pages/ProductPage/ProductPage"));
-const Main = lazy(() => import('./components/Main/Main'))
+const CartPage = lazy(() => import("./pages/CartPage/CartPage"));
+const Main = lazy(() => import("./components/Main/Main"));
 
 const router = createBrowserRouter([
   {
@@ -14,12 +15,17 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       {
+        path: "/home",
         index: true,
         element: <Main />,
       },
       {
         path: "pro/:proId",
         element: <ProductPage />,
+      },
+      {
+        path: "/cart",
+        element: <CartPage />,
       },
     ],
   },

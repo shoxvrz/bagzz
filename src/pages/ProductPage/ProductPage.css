@@ -45,6 +45,7 @@
 .productPage__main {
   display: flex;
   flex-direction: column;
+  padding: 15px;
 }
 .productPage__main--nav {
   display: flex;
