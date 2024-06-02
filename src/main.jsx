@@ -3,6 +3,8 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Loading from "./components/Loading/Loading";
+import store from "./toolkit/store";
+import {Provider} from 'react-redux'
 
 const App = lazy(() => import("./App"));
 const ProductPage = lazy(() => import("./pages/ProductPage/ProductPage"));
@@ -33,8 +35,11 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
+    <Provider store={store}>
+
     <Suspense fallback={<Loading />}>
       <RouterProvider router={router} />
     </Suspense>
+    </Provider>
   </React.StrictMode>
 );

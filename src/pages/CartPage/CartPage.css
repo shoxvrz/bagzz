@@ -1,0 +1,89 @@
+.cart {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+.cart__itemList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  overflow: scroll;
+  height: 60vh;
+}
+.cart__itemList--empty {
+  font-size: 20px;
+  font-weight: 700;
+}
+.cart__calc {
+  padding: 10px 0px;
+}
+.cart__calc p {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid;
+  border-radius: 10px;
+}
+.item__left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+}
+.item__left--image {
+  width: 100%;
+  height: 80%;
+}
+.item__left--image img {
+  width: 100%;
+}
+.item__left--btns {
+  height: 20%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.item__left--btns button {
+  padding: 4px 8px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+}
+.item__left--btns span {
+  font-size: 15px;
+  font-weight: 700;
+}
+.item__right {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 70%;
+  font-size: 10px;
+}
+.item__right h1 {
+  font-size: 15px;
+  font-weight: 600;
+}
+.item__right h2 {
+  font-size: 18px;
+  font-weight: 700;
+}
+.item__right p {
+  font-size: 12px;
+  font-weight: 500;
+}
+.item__right h4 {
+  font-size: 15px;
+  font-weight: 600;
+}/*# sourceMappingURL=CartPage.css.map */

@@ -2,15 +2,20 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import UseGetData from "../../hooks/UseGetData";
 import Loading from "../../components/Loading/Loading";
-import useCart from "../../hooks/UseCart";
 import "./ProductPage.scss";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../toolkit/cartSlice";
 
 const ProductPage = () => {
   const [productData] = UseGetData();
   const { proId } = useParams();
   const [product, setProduct] = useState(null);
   const [activeSection, setActiveSection] = useState("description");
-  const { addToCartHandler } = useCart();
+  const dispatch = useDispatch();
+
+  const handleAddToCart = (product) => {
+    dispatch(addToCart(product))
+  }
 
   useEffect(() => {
     if (productData.length > 0) {
@@ -37,7 +42,7 @@ const ProductPage = () => {
           </div>
           <div className="productPage__top--right-buttons">
             <button>Buy Now</button>
-            <button onClick={() => addToCartHandler(product)}>
+            <button onClick={() => handleAddToCart(product)}>
               Add To Cart
             </button>
           </div>

@@ -21,4 +21,20 @@
 .icon:hover {
   transform: scale(1.2);
   cursor: pointer;
+}
+
+.calc_number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  background-color: #fff;
+  width: 25px;
+  height: 25px;
+  right: 45px;
+  top: 15px;
+  font-weight: 700;
+  border: 3px solid;
+  border-radius: 50%;
+  color: #000;
 }/*# sourceMappingURL=Navigation.css.map */
