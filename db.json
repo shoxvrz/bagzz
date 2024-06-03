@@ -1,0 +1,59 @@
+{
+  "users": [
+    {
+      "name": "Shoxruz",
+      "email": "sh&@gmail.com",
+      "password": "1234",
+      "role": "admin",
+      "id": "e579"
+    },
+    {
+      "id": "77a2",
+      "name": "asdasd",
+      "email": "asdasd",
+      "password": "asdasd"
+    },
+    {
+      "id": "6dad",
+      "name": "asdasd",
+      "email": "asdasd",
+      "password": "asdasd"
+    },
+    {
+      "id": "fef1",
+      "name": "asdasd",
+      "email": "asdasd",
+      "password": "asdasd"
+    },
+    {
+      "id": "c0db",
+      "name": "asdfadsf",
+      "email": "admin777",
+      "password": "asdasd"
+    },
+    {
+      "id": "0906",
+      "name": "sdfdsf",
+      "email": "admin777",
+      "password": "sdf"
+    },
+    {
+      "id": "01ba",
+      "name": "asd",
+      "email": "asdfadsf",
+      "password": "asd"
+    },
+    {
+      "id": "685f",
+      "name": "asd",
+      "email": "asdfadsf",
+      "password": "asd"
+    },
+    {
+      "id": "4efe",
+      "name": "asd",
+      "email": "asdfadsf",
+      "password": "asd"
+    }
+  ]
+}

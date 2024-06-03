@@ -1,0 +1,20 @@
+.search {
+  width: 100%;
+  border: 1px solid;
+  padding: 40px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.search__top {
+  border: 1px solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.search__main {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}/*# sourceMappingURL=Search.css.map */

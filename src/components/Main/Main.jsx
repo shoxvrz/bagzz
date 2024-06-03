@@ -8,13 +8,14 @@ const Main = () => {
   const [productData, , , loading] = UseGetData();
 
   return (
-    <div className="main__products">
-      {productData.map((pro) => (
-        <Card pro={pro} key={pro.id} {...pro} />
-      ))}
-
-      {loading && <Loading className="loading" />}
-    </div>
+    <>
+      <div className="main__products">
+        {productData.map((pro) => (
+          <Card pro={pro} key={pro.id} {...pro} />
+        ))}
+        {loading && <Loading className="loading" />}
+      </div>
+    </>
   );
 };
 

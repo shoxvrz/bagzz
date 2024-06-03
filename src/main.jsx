@@ -11,6 +11,8 @@ const ProductPage = lazy(() => import("./pages/ProductPage/ProductPage"));
 const CartPage = lazy(() => import("./pages/CartPage/CartPage"));
 const FavItemsPage = lazy(() => import('./pages/FavItemsPage/FavItemsPage'))
 const Main = lazy(() => import("./components/Main/Main"));
+const LoginPage = lazy(() => import('./pages/LoginPage/LoginPage'))
+const SignPage = lazy(() => import('./pages/SignPage/SignPage'))
 
 const router = createBrowserRouter([
   {
@@ -33,9 +35,17 @@ const router = createBrowserRouter([
       {
         path: '/favItems',
         element: <FavItemsPage/>
-      }
+      },
     ],
   },
+  {
+    path: '/login',
+    element: <LoginPage/>
+  },
+  {
+    path: 'sign',
+    element: <SignPage/>
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(

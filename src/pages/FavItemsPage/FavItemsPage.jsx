@@ -1,5 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { addToCart } from "../../toolkit/cartSlice";
 import { removeFavItems } from "../../toolkit/favItemsSlice";
 import "./FavItemsPage.scss";
 
@@ -12,11 +13,14 @@ const FavItemsPage = () => {
     dispatch(removeFavItems({ id: item.id }));
   };
 
+  const handleAddToCart = (product) => {
+    dispatch(addToCart(product));
+  };
+
   return (
     <div className="favItems">
       <div className="favItems__list">
         {
-     
           favItems.map((item) => (
             <div key={item.id} className="favCard">
               <div className="favCard__left">
@@ -29,7 +33,7 @@ const FavItemsPage = () => {
                 <div className="favCard__right--btns">
                 <button onClick={() => handleFavItem(item)}>Remove</button>
                 <span className="line"></span>
-                <button>Add To Cart</button>
+                <button onClick={() => handleAddToCart(item)}>Add To Cart</button>
                 </div>
               </div>
             </div>
