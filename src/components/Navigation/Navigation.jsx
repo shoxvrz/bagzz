@@ -16,7 +16,7 @@ const Navigation = () => {
     <div className="navigation">
       <HomeIcon onClick={() => navigate('/home')} style={{ fontSize: '35px' }} className="icon" />
       <SearchIcon style={{ fontSize: '35px' }} className="icon" />
-      <FavoriteIcon style={{ fontSize: '35px' }} className="icon" />
+      <FavoriteIcon onClick={() => navigate('/favItems')} style={{ fontSize: '35px' }} className="icon" />
       <ShoppingBasketIcon onClick={() => navigate('/cart')} style={{ fontSize: '35px' }} className="icon basket-icon" />
       <span className='calc_number'>{totalQuantity}</span>
     </div>

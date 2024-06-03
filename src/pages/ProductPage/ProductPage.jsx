@@ -87,7 +87,7 @@ const ProductPage = () => {
               </span>
               <span>Warranty Info: {product.warrantyInformation}</span>
               <span>Shipping Info: {product.shippingInformation}</span>
-              <span>Availability Status: {product.availabiltyStatus}</span>
+              <span>Availability Status: {product.availabilityStatus}</span>
             </div>
           )}
           {activeSection === "payment" && (

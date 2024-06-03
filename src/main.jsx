@@ -9,6 +9,7 @@ import {Provider} from 'react-redux'
 const App = lazy(() => import("./App"));
 const ProductPage = lazy(() => import("./pages/ProductPage/ProductPage"));
 const CartPage = lazy(() => import("./pages/CartPage/CartPage"));
+const FavItemsPage = lazy(() => import('./pages/FavItemsPage/FavItemsPage'))
 const Main = lazy(() => import("./components/Main/Main"));
 
 const router = createBrowserRouter([
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
         path: "/cart",
         element: <CartPage />,
       },
+      {
+        path: '/favItems',
+        element: <FavItemsPage/>
+      }
     ],
   },
 ]);

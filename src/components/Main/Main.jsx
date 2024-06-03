@@ -5,14 +5,14 @@ import Card from "../Card/Card.jsx";
 import UseGetData from "../../hooks/UseGetData.js";
 
 const Main = () => {
-  const [productData, loadMoreHandler, visible, loading] = UseGetData();
+  const [productData, , , loading] = UseGetData();
 
   return (
     <div className="main__products">
-      {productData.slice(0, visible).map((pro) => (
+      {productData.map((pro) => (
         <Card pro={pro} key={pro.id} {...pro} />
       ))}
-      <button onClick={loadMoreHandler}>Load more</button>
+
       {loading && <Loading className="loading" />}
     </div>
   );

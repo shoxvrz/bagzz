@@ -1,42 +1,44 @@
-import React from 'react'
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
-import FavoriteIcon from '@mui/icons-material/FavoriteBorder';
-import './Card.scss'
+import React, { useState } from "react";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import { useDispatch, useSelector } from "react-redux";
+import { addToFavItems } from "../../toolkit/favItemsSlice";
+import "./Card.scss";
 import { useNavigate } from "react-router-dom";
-import UseFavItems from '../../hooks/UseFavItems';
 
-const Card = ({title, price, images, id}) => {
-  const {addFavItem, removeFavItems, isFavourite} = UseFavItems();
+const Card = ({ title, price, images, id }) => {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
+  const [isLiked, setIsLiked] = useState(false);
+
+  const handleAddToFavList = (item) => {
+    dispatch(addToFavItems(item));
+    setIsLiked(true);
+  };
+
   const item = { title, price, images, id };
 
-  const toggleFavourite = (e) => {
-    e.stopPropagation();
-    if (isFavourite(item)) {
-      removeFavItems(item);
-    } else {
-      addFavItem(item);
-    }
-  };
-  
   return (
-    <div  onClick={() => navigate('/pro/' + id)} className='card'>
-        <div className="card__top">
-        {isFavourite(item) ? (
-          <FavoriteIcon className="favoriteIcon" onClick={toggleFavourite} />
+    <div className="card">
+      <div className="card__top">
+        {isLiked ? (
+          <FavoriteIcon className="favoriteIcon" />
         ) : (
-          <FavoriteBorderIcon className="favoriteIcon" onClick={toggleFavourite} />
+          <FavoriteBorderIcon
+            onClick={() => handleAddToFavList(item)}
+            className="favoriteIcon"
+          />
         )}
-        </div>
-        <div className="card__center">
-            <img src={images[0]} alt="" />
-        </div>
-        <div className="card__bottom">
+      </div>
+      <div onClick={() => navigate("/pro/" + id)} className="card__center">
+        <img src={images[0]} alt="" />
+      </div>
+      <div className="card__bottom">
         <h1 className="title">{title}</h1>
         <span>${price}</span>
-        </div>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Card
+export default Card;
