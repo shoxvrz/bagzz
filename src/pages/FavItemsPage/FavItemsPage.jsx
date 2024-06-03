@@ -14,11 +14,9 @@ const FavItemsPage = () => {
 
   return (
     <div className="favItems">
-      <h1 className="favItems__title">Favorite Items</h1>
       <div className="favItems__list">
-        {favItems.length === 0 ? (
-          <h1 className="cart__itemList--empty">Empty</h1>
-        ) : (
+        {
+     
           favItems.map((item) => (
             <div key={item.id} className="favCard">
               <div className="favCard__left">
@@ -27,10 +25,15 @@ const FavItemsPage = () => {
               <span className="line"></span>
               <div className="favCard__right">
                 <h3>{item.title}</h3>
+
+                <div className="favCard__right--btns">
                 <button onClick={() => handleFavItem(item)}>Remove</button>
+                <span className="line"></span>
+                <button>Add To Cart</button>
+                </div>
               </div>
             </div>
-          ))
+          )
         )}
       </div>
     </div>
